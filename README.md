@@ -8,6 +8,8 @@
     - [Webpack](#webpack)
     - [Webpack Dev Server](#webpack-dev-server)
     - [SASS](#sass)
+    - [EsLint](#eslint)
+    - [.gitignore](#gitignore)
   - [Content](#content)
   - [How to clone](#how-to-clone)
   - [Installation](#installation)
@@ -23,6 +25,7 @@
       - [Actualización:](#actualizaci%c3%b3n)
       - [Demonstaje:](#demonstaje)
       - [Manejo de errores](#manejo-de-errores)
+    - [ESLint](#eslint-1)
 
 ## Dependencias:
 ### React-dom
@@ -152,7 +155,13 @@ plugins: [
 ],`
 ```
 
+### EsLint
+`npm install --save-dev eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y`
 
+[.eslintrc link](https://gist.github.com/EmmaIsWorking/1b22884691d3848b141c9cf35a6d6672)
+
+### .gitignore
+[.gitignore link](https://gist.github.com/EmmaIsWorking/1366317dcfcdc90c1801bece25cca0c6)
 
 `npx create-react-app @NameProyect`
 ## Content
@@ -205,3 +214,9 @@ Los componentes en react pasan por un Montaje, Actualización, Desmontaje y Mane
 
 #### Manejo de errores
 `getDerivedStateFromError()`
+
+### ESLint
+Los linters como ESLint son herramientas que nos ayudan a seguir buenas prácticas o guías de estilo de nuestro código.
+En algunos casos también pueden solucionar los errores automáticamente. De esta manera podemos solucionar los errores incluso antes de que sucedan.
+
+Instalacion: [EsLint](#eslint)
