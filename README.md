@@ -10,6 +10,8 @@
     - [SASS](#sass)
     - [EsLint](#eslint)
     - [.gitignore](#gitignore)
+    - [File Loader](#file-loader)
+    - [Fake API](#fake-api)
   - [Content](#content)
   - [How to clone](#how-to-clone)
   - [Installation](#installation)
@@ -26,6 +28,8 @@
       - [Demonstaje:](#demonstaje)
       - [Manejo de errores](#manejo-de-errores)
     - [ESLint](#eslint-1)
+    - [Añadiendo imágenes con Webpack](#a%c3%b1adiendo-im%c3%a1genes-con-webpack)
+    - [Fake API](#fake-api-1)
 
 ## Dependencias:
 ### React-dom
@@ -163,8 +167,67 @@ plugins: [
 ### .gitignore
 [.gitignore link](https://gist.github.com/EmmaIsWorking/1366317dcfcdc90c1801bece25cca0c6)
 
+### File Loader
+Instalación de File Loader:
+
+`npm install --save-dev file-loader`
+
+Configuración de File Loader en Webpack (webpack.config.js):
+
+```
+rules: [
+  {
+    test: /\.(png|gif|jpg)$/,
+    use: [
+      {
+        loader: 'file-loader',
+        options: { name: 'assets/[hash].[ext]' },
+      }
+    ],
+  },
+],
+```
+
+Uso de File Loader con React:
+
+```
+import React from 'react';
+import nombreDeLaImagen from '../assets/static/nombre-del-archivo';
+
+const Component = () => (
+  <img src={nombreDeLaImagen} />
+);
+
+export default Component;
+```
+
+### Fake API
+Instalación de JSON Server:
+```
+sudo npm install json-server -g
+```
+
+Recuerda que en Windows debes correr tu terminal de comandos en modo administrador.
+
+Ejecutar el servidor de JSON Server:
+
+```bash
+json-server archivoParaTuAPI.json
+```
+
 `npx create-react-app @NameProyect`
+
+
 ## Content
+
+- App
+  - Header
+  - Search
+  - Categories
+    - Carousel
+      - CorouselItems
+  - Footer
+
 ## How to clone
 ## Installation
 ## Preview
@@ -220,3 +283,16 @@ Los linters como ESLint son herramientas que nos ayudan a seguir buenas práctic
 En algunos casos también pueden solucionar los errores automáticamente. De esta manera podemos solucionar los errores incluso antes de que sucedan.
 
 Instalacion: [EsLint](#eslint)
+
+### Añadiendo imágenes con Webpack
+
+Vamos a usar File Loader para acceder a las imágenes de nuestro proyecto desde el código.
+
+Inicialmente, estos archivos estáticos se encuentran junto al código de desarrollo. Pero al momento de compilar, Webpack guardará las imágenes en una nueva carpeta junto al código para producción y actualizará nuestros componentes (o donde sea que usemos las imágenes) con los nuevos nombres y rutas de los archivos.
+
+[Instalacion Link](#file-loader)
+
+### Fake API
+Vamos a usar JSON Server para crear una Fake API: una API ““falsa”” construida a partir de un archivo JSON que nos permite preparar nuestro código para consumir una API de verdad en el futuro.
+
+[Instalacion Link](#fake-api)
