@@ -4,6 +4,10 @@
 - [React Course](#react-course)
   - [Index](#index)
   - [Dependencias:](#dependencias)
+    - [React-dom](#react-dom)
+    - [Webpack](#webpack)
+    - [Webpack Dev Server](#webpack-dev-server)
+    - [SASS](#sass)
   - [Content](#content)
   - [How to clone](#how-to-clone)
   - [Installation](#installation)
@@ -21,6 +25,7 @@
       - [Manejo de errores](#manejo-de-errores)
 
 ## Dependencias:
+### React-dom
 `npm install react react-dom`
 
 Instalación de Babel y otras herramientas para que funcione con React:
@@ -37,8 +42,8 @@ Configuración de Babel (.babelrc):
   ],
 }
 ```
-
-Webpack: 
+### Webpack
+Webpack:
 Instalación de Webpack y algunos plugins:
 
 ```
@@ -98,7 +103,7 @@ Script para ejecutar las tareas de Webpack (package.json):
 }
 
 ```
-
+### Webpack Dev Server
 Instalación de Webpack Dev Server:
 
 `npm install --save-dev webpack-dev-server`
@@ -113,6 +118,41 @@ Script para ejecutar el servidor de Webpack y visualizar los cambios en tiempo r
   },
 }
 ```
+
+
+### SASS
+Instalación de Sass:
+
+`npm install --save-dev mini-css-extract-plugin css-loader node-sass sass-loader`
+
+```
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+// ...
+
+module: {
+  rules: [
+    {
+      test: /\.(s*)css$/,
+      use: [
+        { loader: MiniCssExtractPlugin.loader },
+        'css-loader',
+        'sass-loader',
+      ],
+    },
+  ],
+},
+
+// ...
+
+plugins: [
+  new MiniCssExtractPlugin({
+    filename: 'assets/[name].css',
+  }),
+],`
+```
+
+
 
 `npx create-react-app @NameProyect`
 ## Content
