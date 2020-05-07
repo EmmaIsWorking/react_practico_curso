@@ -12,6 +12,7 @@
     - [.gitignore](#gitignore)
     - [File Loader](#file-loader)
     - [Fake API](#fake-api)
+    - [PropTypes](#proptypes)
   - [Content](#content)
   - [How to clone](#how-to-clone)
   - [Installation](#installation)
@@ -31,6 +32,7 @@
     - [Añadiendo imágenes con Webpack](#a%c3%b1adiendo-im%c3%a1genes-con-webpack)
     - [Fake API](#fake-api-1)
     - [React Hooks](#react-hooks)
+    - [PropTypes](#proptypes-1)
 
 ## Dependencias:
 ### React-dom
@@ -221,7 +223,14 @@ Ejecutar el servidor de JSON Server:
 json-server archivoParaTuAPI.json
 ```
 
-`npx create-react-app @NameProyect`
+### PropTypes
+Instalación de PropTypes:
+
+
+
+`npm install --save prop-types`
+
+
 
 
 ## Content
@@ -316,3 +325,41 @@ React nos permite crear nuestros propios Hooks. Solo debemos seguir algunas conv
 Los hooks siempre deben empezar con la palabra *use: useAPI, useMovies, useWhatever*.
 Si nuestro custom hook nos permite consumir/interactuar con dos elementos (por ejemplo, title y setTitle), nuestro hook debe devolver un array.
 Si nuestro custom hook nos permite consumir/interactuar con tres o más elementos (por ejemplo, name, setName, lastName, setLastName, etc.), nuestro hook debe devolver un objeto.
+
+### PropTypes
+Los PropTypes son una propiedad de nuestros componentes que nos permiten especificar qué tipo de elementos son nuestras props: arrays, strings, números, etc.
+
+[Instalación de PropTypes](#proptypes)
+
+Uso de PropTypes:
+
+```
+import React from 'react';
+import PropTypes from 'prop-types';
+
+const Component = ({ name, lastName, age, list }) => {
+  // ...
+};
+
+Component.propTypes = {
+  name: PropTypes.string,
+  lastName: PropTypes.string,
+  age: PropTypes.number,
+  list: PropTypes.array,
+};
+
+export default Component;
+```
+
+Por defecto, enviar todas nuestras props es opcional, pero con los propTypes podemos especificar cuáles props son obligatorias para que nuestro componente funcione correctamente con el atributo isRequired.
+
+```
+Component.propTypes = {
+  name: PropTypes.string.isRequired, // obligatorio
+  lastName: PropTypes.string.isRequired, // obligatorio
+  age: PropTypes.number, // opcional,
+  list: PropTypes.array, // opcional
+};
+```
+
+
