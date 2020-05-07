@@ -30,6 +30,7 @@
     - [ESLint](#eslint-1)
     - [Añadiendo imágenes con Webpack](#a%c3%b1adiendo-im%c3%a1genes-con-webpack)
     - [Fake API](#fake-api-1)
+    - [React Hooks](#react-hooks)
 
 ## Dependencias:
 ### React-dom
@@ -172,6 +173,11 @@ Instalación de File Loader:
 
 `npm install --save-dev file-loader`
 
+Agregá `initialState.json` al root de la carpeta
+
+[InitialState.json link](https://gist.github.com/gndx/d4ca4739450afaa614efe4570ac362ee)
+
+
 Configuración de File Loader en Webpack (webpack.config.js):
 
 ```
@@ -296,3 +302,17 @@ Inicialmente, estos archivos estáticos se encuentran junto al código de desarr
 Vamos a usar JSON Server para crear una Fake API: una API ““falsa”” construida a partir de un archivo JSON que nos permite preparar nuestro código para consumir una API de verdad en el futuro.
 
 [Instalacion Link](#fake-api)
+
+### React Hooks
+Una característica de React disponible a partir de la versión 16.8 que nos permite agregar estado y ciclo de vida a nuestros componentes creados como funciones.
+
+El Hook **useState** nos devuelve un array con dos elementos: la primera posición es el valor de nuestro estado, la segunda es una función que nos permite actualizar ese valor.
+
+El Hook **useEffect** nos permite ejecutar código cuando se monta, desmonta o actualiza nuestro componente.
+
+[Lectura React Hooks](https://platzi.com/clases/1651-react-ejs/22668-lectura-react-hooks/)
+React nos permite crear nuestros propios Hooks. Solo debemos seguir algunas convenciones:
+
+Los hooks siempre deben empezar con la palabra *use: useAPI, useMovies, useWhatever*.
+Si nuestro custom hook nos permite consumir/interactuar con dos elementos (por ejemplo, title y setTitle), nuestro hook debe devolver un array.
+Si nuestro custom hook nos permite consumir/interactuar con tres o más elementos (por ejemplo, name, setName, lastName, setLastName, etc.), nuestro hook debe devolver un objeto.
