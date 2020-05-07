@@ -7,18 +7,16 @@
     - [React-dom](#react-dom)
     - [Webpack](#webpack)
     - [Webpack Dev Server](#webpack-dev-server)
+  - [Contenidos](#contenidos)
+  - [Instalacion](#instalacion)
     - [SASS](#sass)
     - [EsLint](#eslint)
     - [.gitignore](#gitignore)
     - [File Loader](#file-loader)
     - [Fake API](#fake-api)
     - [PropTypes](#proptypes)
-  - [Content](#content)
-  - [How to clone](#how-to-clone)
-  - [Installation](#installation)
   - [Preview](#preview)
-  - [Notes](#notes)
-  - [Concepts](#concepts)
+  - [Conceptos](#conceptos)
     - [Tipos de componentes:](#tipos-de-componentes)
       - [Stateful](#stateful)
       - [Stateless & Presentatitonal:](#stateless--presentatitonal)
@@ -33,6 +31,8 @@
     - [Fake API](#fake-api-1)
     - [React Hooks](#react-hooks)
     - [PropTypes](#proptypes-1)
+  - [Notas](#notas)
+    - [Redes Sociales](#redes-sociales)
 
 ## Dependencias:
 ### React-dom
@@ -129,7 +129,17 @@ Script para ejecutar el servidor de Webpack y visualizar los cambios en tiempo r
 }
 ```
 
+## Contenidos
 
+- App
+  - Header
+  - Search
+  - Categories
+    - Carousel
+      - CorouselItems
+  - Footer
+
+## Instalacion
 ### SASS
 Instalación de Sass:
 
@@ -227,27 +237,12 @@ json-server archivoParaTuAPI.json
 Instalación de PropTypes:
 
 
-
 `npm install --save prop-types`
 
-
-
-
-## Content
-
-- App
-  - Header
-  - Search
-  - Categories
-    - Carousel
-      - CorouselItems
-  - Footer
-
-## How to clone
-## Installation
 ## Preview
-## Notes
-## Concepts
+![preview](src/assets/static/preview.png)
+
+## Conceptos
 
 ### Tipos de componentes:
 Los nombres de nuestros componentes deben empezar con una letra mayúscula, al igual que cada nueva palabra del componente. Esto lo conocemos como Pascal Case o Upper Camel Case.
@@ -260,8 +255,6 @@ También tenemos componentes Stateless o Presentacionales. Los usamos creando fu
 
 ### Props
 Las Props son la forma de enviar y recibir información en nuestros componentes.
-
-
 
 ### Metodos de Ciclos de Vida
 Todos los componentes en React pasan por una serie de fases que generalmente se denominan “Ciclo de Vida del componente” es un proceso que React hace en cada componente, en algunos casos no podemos verlos como un bloque de código y en otros podemos llamarlos en nuestro componente para asignar una actividad según sea el caso necesario.
@@ -361,5 +354,12 @@ Component.propTypes = {
   list: PropTypes.array, // opcional
 };
 ```
+## Notas
+- [Link de Platzi](http://platzi.com)
+### Redes Sociales
+- [Twitter](https://twitter.com/emmaisworking)
+- [LinkendIn](https://www.linkedin.com/in/emmaisworking/)
+- [Facebook](https://www.facebook.com/EmmaIsWorking)
+- [Instagram](https://www.instagram.com/emmaisworking/)
 
 
